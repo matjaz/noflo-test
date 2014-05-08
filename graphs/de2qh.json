@@ -1,0 +1,70 @@
+{
+    "properties": {
+        "name": "test",
+        "id": "de2qh",
+        "project": "test",
+        "environment": {
+            "type": "noflo-browser"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "prompts/Alert_fpiuz": {
+            "component": "prompts/Alert",
+            "metadata": {
+                "label": "prompts/Alert",
+                "x": 540,
+                "y": 252
+            }
+        },
+        "core/Repeat_5zzum": {
+            "component": "core/Repeat",
+            "metadata": {
+                "label": "core/Rasdepeat",
+                "x": 360,
+                "y": 252
+            }
+        },
+        "prompts/Prompt_undzq": {
+            "component": "prompts/Prompt",
+            "metadata": {
+                "label": "prompts/Prompt",
+                "x": 216,
+                "y": 252
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "core/Repeat_5zzum",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "prompts/Alert_fpiuz",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "prompts/Prompt_undzq",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/Repeat_5zzum",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "data": "Text: ",
+            "tgt": {
+                "process": "prompts/Prompt_undzq",
+                "port": "in"
+            }
+        }
+    ]
+}
